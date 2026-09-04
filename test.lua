@@ -1,7 +1,7 @@
--- Envía un mensaje al chat en cuanto el script arranca en el cliente
-ac.sendChatMessage("¡Script de servidor CSP cargado correctamente!")
+-- Envía un mensaje local cuando el script arranca en el cliente
+ac.setMessage("¡Script de servidor CSP cargado correctamente!")
 
--- Envía un mensaje al chat cuando el piloto entra a la pista
-ac.on('sessionStart', function ()
-    ac.sendChatMessage("¡Bienvenido al servidor!")
+-- Evento cuando el piloto entra o cambia de sesión
+ac.onSessionStart(function (sessionIndex, isReplay)
+    ac.setMessage("¡Bienvenido al servidor!")
 end)
